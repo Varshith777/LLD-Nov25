@@ -1,0 +1,17 @@
+Handling exception ->
+
+1. You handle it yourself
+       try / catch
+       try -> put the piece of code that may throw an exception inside try
+       *WITH TRY, either catch or finally is mandatory.
+       Ideally -> always keep try and catch together
+       1 try block, can have multiple catch blocks -> remember to go top->down, from parent to child
+2. You dont handle, let the caller method handle it
+        throws
+        Basically the method informs that it may throw an exception
+
+
+3. FINALLY
+    block of code that comes either after try or catch
+    this block of code always executes itself, no matter exception happened or not, handled or not
+    used for clean up of resources

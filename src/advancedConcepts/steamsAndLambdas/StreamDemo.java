@@ -1,9 +1,6 @@
 package advancedConcepts.steamsAndLambdas;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StreamDemo {
@@ -64,6 +61,37 @@ public class StreamDemo {
                 .toList();
         System.out.println(flatList);
 
+        //Given a list of integers, find the second largest distinct number using Streams.
+        List<Integer> l2  = Arrays.asList(12,34,56,1,1,12,3,4,5,6,78,90,23,212,3,0);
+        int secondLargest = l2.stream()
+                .distinct()
+                .sorted(Comparator.reverseOrder())
+                .skip(1)
+                .findFirst()
+                .get();
+        System.out.println(secondLargest);
+
+        //Given a list of integers, count how many are prime numbers
+        long primeCount = l2.stream()
+                .filter(n -> isPrime(n))
+                .count();
+        System.out.println(primeCount);
+
+        //Given a list of integers, return all values that occur more than once
+        List<Integer> multiOccurenceList = l2.stream()
+                .collect(Collectors.groupingBy(
+                        n -> n,
+                        Collectors.counting()
+                )).entrySet().stream()
+                .filter(e -> e.getValue() > 1)
+                .map(e -> e.getKey())
+                .toList();
+
+        System.out.println(multiOccurenceList);
+
+
+
+
 
 
 
@@ -75,12 +103,17 @@ public class StreamDemo {
 
     }
 
+    public static boolean isPrime(int n) {
+        //TODO: implement prime check logic
+        return true;
+    }
 
-    public void filter(int n){
+
+    public boolean filter(int n){
         if(n%2 == 0){
-            System.out.println("Keep N ");
+            return true;
         } else {
-            System.out.println("Reject N ");
+            return false;
         }
     }
 
@@ -105,5 +138,11 @@ public class StreamDemo {
        //Given a list of integers, find the second largest distinct number using Streams.
        //Given a list of integers, count how many are prime numbers
        //Given a list of integers, return all values that occur more than once
-
+            12,34,56,1,1,12,3,4,5,6,78,90,23,212,3,0
+            [ [12,2],  for each entry check if the value is greater than 1
+              [34,1],
+              [56,1],
+              [1,1],
+              ...
+            ]
  */
