@@ -7,6 +7,10 @@ public class ICECar extends Car { // ICECar is child of Car
         System.out.println("Executing ICECar constructor");
     }
 
+    public void unlockCar(){
+        System.out.println("Unlocking ICE Car");
+    }
+
     public void refuelCar(){
         System.out.println("Refueling Car");
     }

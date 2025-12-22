@@ -14,11 +14,11 @@ public class Main {
 //        Student student = Student.build(builder);
 
         Student student =
-                Student.builder()
-                        .id(1)
-                        .name("Aswin")
-                        .age(25)
-                        .psp(90)
+                Student.builder() // Builder b = Student.builder()
+                        .id(1) // b =b.id(1)
+                        .name("Aswin") // b = b.name("Ashwin")
+                        .age(25) // b = b.age(25)
+                        .psp(90) // b = b.psp(90)
                         .gradYear(2024)
                         .phoneNumber("1234567890")
                         .universityName("Parul University")

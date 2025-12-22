@@ -65,6 +65,14 @@ public class Main {
         TurboCar tc = new TurboCar();
         tc.startEngine();
 
+
+
+        Car c1 = new Car();
+        Car iceCar1 = new ICECar();
+        System.out.println("----------------------------");
+        c1.unlockCar(); // CAR
+        iceCar1.unlockCar(); // ICECAR
+
     }
 }
 // Java does not support multiple inheritance with classes
